@@ -1,0 +1,129 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+button , input[type=submit] , .ss a {
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 25px auto;
+    padding: 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: #303030;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+}
+
+.ss a {
+    width: 200px;
+}
+
+.ss a:hover {
+    background-color:#d3a757;
+    transition: 0.3s;
+}
+
+input[type=submit]:hover {
+    background-color:#d3a757;
+    transition: 0.3s;
+}
+
+.container {
+    width: 800px;
+    padding: 15px 50px 80px 50px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+
+.p-container , .tr-container {
+    padding: 50px 50px 60px 50px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.p-container {
+    background-color: #303030;
+    color: #fff;
+}
+
+.tr-container {
+    background-color: #fff;
+}
+
+.fheading {
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.pgrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 20px;
+    column-gap: 20px;
+    column-width: 50%;
+}
+
+.pgrid input , .pgi select {
+    width: 80%;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 25px;
+    border: solid 1px #505050;
+    padding: 2px 20px;
+    font-size: 18px;
+}
+
+.pgrid select {
+    height: 35px;
+    width: 90%;
+}
+
+.fgrid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    row-gap: 10px;
+    column-gap: 20px;
+    column-width: 25%;
+}
+
+.fgrid input {
+    width: 80px;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 25px;
+    border: solid 1px #505050;
+    padding: 2px 20px;
+    font-size: 18px;
+}
+
+.fgi {
+    font-size: 15px;
+    margin: 0 auto;
+}
+
+.fgi span {
+    color: green;
+}
+
+.ss select {
+    text-align: center;
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 25px;
+    padding: 15px;
+    border: none;
+    border-bottom: solid 1px gray;
+    background-color: none;
+    color: rgb(0, 85, 0);
+}
