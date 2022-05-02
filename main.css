@@ -18,6 +18,14 @@ button , input[type=submit] , .ss a {
     cursor: pointer;
 }
 
+.fheading {
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+
 .ss a {
     width: 200px;
 }
@@ -36,9 +44,15 @@ input[type=submit]:hover {
     width: 800px;
     padding: 15px 50px 80px 50px;
     margin: 0 auto;
-    background-color: rgb(161, 161, 161);
+    background-color: #fff;
 }
 
+.sgrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    font-size: 13px;
+    font-weight: 300;
+}
 
 .p-container , .tr-container {
     padding: 50px 50px 60px 50px;
@@ -54,13 +68,6 @@ input[type=submit]:hover {
 
 .tr-container {
     background-color: #fff;
-}
-
-.fheading {
-    text-align: center;
-    padding-bottom: 20px;
-    font-size: 30px;
-    letter-spacing: 2px;
 }
 
 .pgrid {

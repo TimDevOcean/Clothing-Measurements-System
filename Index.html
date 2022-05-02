@@ -12,6 +12,30 @@
   <body>
     <div class="container">
 
+      <div class="s-container">
+        <div class="sgrid">
+          <div class="sgi" align="left";>
+            <label for="metric">Metric</label>
+            <select name="" id="metric" onchange="toggleMetric();">
+              <option value="CM">Centimetres</option>
+              <option value="IN">Inches</option>
+            </select>
+          </div>
+
+          <div class="sgi" align="center";>
+            <span>SEKBI MEASUREMENTS</span>
+          </div>
+
+          <div class="sgi" align="right";>
+            <label for="lang">Language</label>
+            <select name="" id="lang">
+              <option value="EN">English</option>
+              <option value="FR">French</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
       <img style="margin: 0 auto; width: 70px; display: block; padding:25px" src="img/icon-black.png" alt="">
 
       <form class="mform" action="https://docs.google.com/forms/u/4/d/e/1FAIpQLSdPJh-B1t29_mhxRmby1u-nX_R2ThIKZmuNznv9RadO_lid_A/formResponse" target="_self" method="POST" id="mG61Hd" jsmodel="TOfxwf Q91hve CEkLOc" data-shuffle-seed="6451193648545606480" data-response="%.@.[]]" data-first-entry="0" data-last-entry="4" data-is-first-page="true">
@@ -53,13 +77,13 @@
         <div class="fgrid">
           <div class="fgi">
             <label for="tr_waist">WAIST</label><br>
-            <input id="tr_waist" type="number" name="entry.48874829" value="" onChange="estTrouserWaist();"><br>
+            <input id="tr_waist" class="num" type="number" name="entry.48874829" value="" onChange="estStandardSize(trWaist.value, trWaistSize, trWaistSS); estTrouserSS();"><br>
             <span id="tr-wss">&nbsp;</span>
           </div>
 
           <div class="fgi">
             <label for="tr_hip">HIP</label><br>
-            <input id="tr_hip" type="number" name="entry.1259848921" value="" onChange="estTrouserHip();"><br>
+            <input id="tr_hip" class="num" type="number" name="entry.1259848921" value="" onChange="estStandardSize(trHip.value, trHipSize, trHipSS); estTrouserSS();"><br>
             <span id="tr-hss">&nbsp;</span>
           </div>
 
@@ -101,7 +125,7 @@
 
           <div class="fgi">
             <label for="tr_long_length">LONG LENGTH</label><br>
-            <input id="tr_long_length" type="number" name="entry.1551565213" value="" onChange="estTrouserLength(); estTrouserSS();"><br>
+            <input id="tr_long_length" type="number" name="entry.1551565213" value="" onChange="estStandardSize(trLength.value, trLengthSize, trLengthSS); estTrouserSS();"><br>
             <span id="tr-lss">&nbsp;</span>
           </div>
 

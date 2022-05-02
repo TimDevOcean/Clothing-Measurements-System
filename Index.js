@@ -1,6 +1,6 @@
 // TROUSERS / SKIRTS
 
-// Input declarations
+// User input declarations
 let trWaist = document.querySelector('#tr_waist');
 let trHip = document.querySelector('#tr_hip');
 let trLength = document.querySelector('#tr_long_length');
@@ -9,75 +9,76 @@ let trWaistSS = document.querySelector('#tr-wss');
 let trHipSS = document.querySelector('#tr-hss');
 let trLengthSS = document.querySelector('#tr-lss');
 let trSS = document.querySelector('#tr_ss');
+// Size data in centimeters
+var trouser = {
+    waistSize: [60,64,73,82,88,97,108,118,151],
+    hipSize: [72,77,89,99,105,114,121,131,151],
+    lengthSize: [80,81,81.5,82.5,84,85,85.5,85.8,100]
+};
 
-// Estimate Functions
-// Estimate waist standard size
-function estTrouserWaist() {
-    if (trWaist.value == 60 || trWaist.value < 64){
-        trWaistSS.innerHTML = 'XXS';
-    } else if (trWaist.value == 64 || trWaist.value < 73){
-        trWaistSS.innerHTML = 'XS';
-    } else if (trWaist.value == 73 || trWaist.value < 82){
-        trWaistSS.innerHTML = 'S';
-    } else if (trWaist.value == 82 || trWaist.value < 88){
-        trWaistSS.innerHTML = 'M';
-    } else if (trWaist.value == 88 || trWaist.value < 97){
-        trWaistSS.innerHTML = 'L';
-    } else if (trWaist.value == 97 || trWaist.value < 108){
-        trWaistSS.innerHTML = 'XL';
-    } else if (trWaist.value == 108 || trWaist.value < 118){
-        trWaistSS.innerHTML = 'XXL';
-    } else if (trWaist.value == 118 || trWaist.value < 200){
-        trWaistSS.innerHTML = '3XL';
+var skirt = {
+    waistSize: [60,64,73,82,88,97,108,118,151],
+    hipSize: [72,77,89,99,105,114,121,131,151],
+    lengthSize: [80,81,81.5,82.5,84,85,85.5,85.8,100]
+};
+
+// Standard size estimation function parameters declaration
+let trWaistSize = trouser.waistSize;
+let trHipSize = trouser.hipSize;
+let trLengthSize = trouser.lengthSize;
+
+function estStandardSize(userData, sizeArray, standardSize) {
+    if (userData >= sizeArray[0] && userData < sizeArray[1]){
+        standardSize.innerHTML = 'XXS';
+    } else if (userData >= sizeArray[1] && userData < sizeArray[2]){
+        standardSize.innerHTML = 'XS';
+    } else if (userData >= sizeArray[2] && userData < sizeArray[3]){
+        standardSize.innerHTML = 'S';
+    } else if (userData >= sizeArray[3] && userData < sizeArray[4]){
+        standardSize.innerHTML = 'M';
+    } else if (userData >= sizeArray[4] && userData < sizeArray[5]){
+        standardSize.innerHTML = 'L';
+    } else if (userData >= sizeArray[5] && userData < sizeArray[6]){
+        standardSize.innerHTML = 'XL';
+    } else if (userData >= sizeArray[6] && userData < sizeArray[7]){
+        standardSize.innerHTML = 'XXL';
+    } else if (userData >= sizeArray[7] && userData < sizeArray[8]){
+        standardSize.innerHTML = 'XXXL';
     } else {
-        trWaistSS.innerHTML = 'undefined';
+        standardSize.innerHTML = 'undefined';
     }
-    return trWaistSS.innerHTML;
-}
+    return standardSize.innerHTML;
+};
 
-// Estimate hip standard size
-function estTrouserHip() {
-    if (trHip.value == 72 || trHip.value < 77){
-        trHipSS.innerHTML = 'XXS';
-    } else if (trHip.value == 77 || trHip.value < 89){
-        trHipSS.innerHTML = 'XS';
-    } else if (trHip.value == 89 || trHip.value < 99){
-        trHipSS.innerHTML = 'S';
-    } else if (trHip.value == 99 || trHip.value < 105){
-        trHipSS.innerHTML = 'M';
-    } else if (trHip.value == 105 || trHip.value < 114){
-        trHipSS.innerHTML = 'L';
-    } else if (trHip.value == 114 || trHip.value < 121){
-        trHipSS.innerHTML = 'XL';
-    } else if (trHip.value == 121 || trHip.value < 131){
-        trHipSS.innerHTML = 'XXL';
-    } else if (trHip.value == 131 || trHip.value < 200){
-        trHipSS.innerHTML = '3XL';
-    } else {
-        trHipSS.innerHTML = 'undefined';
-    }
-    return trHipSS.innerHTML;
-}
-
-// Estimate length standard size
-function estTrouserLength() {
-    if (trLength.value == 80 || trLength.value < 83){
-        trLengthSS.innerHTML = 'S';
-    } else if (trLength.value == 83 || trLength.value < 84){
-        trLengthSS.innerHTML = 'M';
-    } else if (trLength.value == 84 || trLength.value < 85){
-        trLengthSS.innerHTML = 'L';
-    } else if (trLength.value == 85 || trLength.value < 86){
-        trLengthSS.innerHTML = 'XL';
-    } else if (trLength.value == 86 || trLength.value < 120){
-        trLengthSS.innerHTML = 'XXL';
-    } else {
-        trLengthSS.innerHTML = 'undefined';
-    }
-    return trLengthSS.innerHTML;
-}
-
-// Estimate overall trouser standard size
 function estTrouserSS() {
     trSS.value = trWaistSS.innerHTML;
+} 
+
+
+// Metric convertor
+var measurement = document.querySelectorAll('input[type=number]');
+var numOfMeasurements = document.querySelectorAll('input[type=number]').length;
+var convertMetricIN = function () {
+    for (var i=0; i < numOfMeasurements; i++){
+       var x = measurement[i].value * 0.39;
+       measurement[i].value = x;
+        
+    }
+}
+
+var convertMetricCM = function () {
+    for (var i=0; i < numOfMeasurements; i++){
+       var x = Math.floor(measurement[i].value * 2.54);
+       measurement[i].value = x;
+        
+    }
+}
+
+let metricToggle = document.querySelector('#metric')
+function toggleMetric() {
+    if(metricToggle.value === 'IN'){
+        convertMetricIN();
+    } else if (metricToggle.value === 'CM'){
+        convertMetricCM();
+    }
 }
