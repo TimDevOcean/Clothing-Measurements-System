@@ -17,7 +17,7 @@
           <div class="sgi" align="left";>
             <label for="metric">Metric</label>
             <select name="" id="metric" onchange="toggleMetric();">
-              <option value="CM">Centimetres</option>
+              <option value="CM">Centimeters</option>
               <option value="IN">Inches</option>
             </select>
           </div>
@@ -44,17 +44,17 @@
           <div class="pgrid">
             <div class="pgi">
               <label for="company">COMPANY</label><br>
-              <input id="company" type="text" name="entry.234638592" value="">
+              <input id="company" required type="text" name="entry.234638592" value="">
             </div>
 
             <div class="pgi">
               <label for="staff_name">STAFF NAME</label><br>
-              <input id="staff_name" type="text" name="entry.1153739172" value="">
+              <input id="staff_name" required type="text" name="entry.1153739172" value="">
             </div>
 
             <div class="pgi">
               <label for="gender">GENDER</label><br>
-              <select name="entry.962803964" id="gender">
+              <select required name="entry.962803964" id="gender">
                 <option value="">Select</option>
                 <option value="MALE">MALE</option>
                 <option value="FEMALE">FEMALE</option>
@@ -63,7 +63,19 @@
 
             <div class="pgi">
               <label for="department">DEPARTMENT / ROLE</label><br>
-              <input id="department" type="text" name="entry.2095306148" value="">
+              <input id="department" required type="text" name="entry.2095306148" value="">
+            </div>
+          </div>
+        </div>
+
+        <div class="h-container">
+          <div class="hgrid">
+            <div class="hgi" align="center";>
+              <label for="metric">Metric</label>
+              <select hidden name="entry.619577762" id="h-metric">
+                <option value="CENTIMETERS">Centimeters</option>
+                <option value="INCHES">Inches</option>
+              </select>
             </div>
           </div>
         </div>
@@ -77,61 +89,61 @@
         <div class="fgrid">
           <div class="fgi">
             <label for="tr_waist">WAIST</label><br>
-            <input id="tr_waist" class="num" type="number" name="entry.48874829" value="" onChange="estStandardSize(trWaist.value, trWaistSize, trWaistSS); estTrouserSS();"><br>
+            <input id="tr_waist" class="num" type="number" step=".01" name="entry.48874829" value="" onChange="estStandardSize(trWaist.value, trWaistSize, trWaistSS); estTrouserSS();"><br>
             <span id="tr-wss">&nbsp;</span>
           </div>
 
           <div class="fgi">
             <label for="tr_hip">HIP</label><br>
-            <input id="tr_hip" class="num" type="number" name="entry.1259848921" value="" onChange="estStandardSize(trHip.value, trHipSize, trHipSS); estTrouserSS();"><br>
+            <input id="tr_hip" class="num" type="number" step=".01" name="entry.1259848921" value="" onChange="estStandardSize(trHip.value, trHipSize, trHipSS); estTrouserSS();"><br>
             <span id="tr-hss">&nbsp;</span>
           </div>
 
           <div class="fgi">
             <label for="tr_thigh">THIGH</label><br>
-            <input id="tr_thigh" type="number" name="entry.2074640326" value=""><br>
+            <input id="tr_thigh" type="number" step=".01" name="entry.2074640326" value=""><br>
             <span id="tr-tss">&nbsp;</span>
           </div>
 
           <div class="fgi">
             <label for="tr_knee">KNEE</label><br>
-            <input id="tr_knee" type="number" name="entry.878575547" value=""><br>
+            <input id="tr_knee" type="number" step=".01" name="entry.878575547" value=""><br>
             <span>&nbsp;</span>
           </div>
 
           <div class="fgi">
             <label for="tr_calf">CALF</label><br>
-            <input id="tr_calf" type="number" name="entry.1916469482" value=""><br>
+            <input id="tr_calf" type="number" step=".01" name="entry.1916469482" value=""><br>
             <span>&nbsp;</span>
           </div>
 
           <div class="fgi">
             <label for="tr_bar">BAR</label><br>
-            <input id="tr_bar" type="number" name="entry.1972835024" value=""><br>
+            <input id="tr_bar" type="number" step=".01" name="entry.1972835024" value=""><br>
             <span>&nbsp;</span>
           </div>
 
           <div class="fgi">
             <label for="tr_short_length">SHORT LENGTH</label><br>
-            <input id="tr_short_length" type="number" name="entry.1832086399" value=""><br>
+            <input id="tr_short_length" step=".01" type="number" name="entry.1832086399" value=""><br>
             <span>&nbsp;</span>
           </div>
 
           <div class="fgi">
             <label for="tr_medium_length">MEDIUM LENGTH</label><br>
-            <input id="tr_medium_length" type="number" name="entry.585473768" value=""><br>
+            <input id="tr_medium_length" type="number" step=".01" name="entry.585473768" value=""><br>
             <span>&nbsp;</span>
           </div>
 
           <div class="fgi">
             <label for="tr_long_length">LONG LENGTH</label><br>
-            <input id="tr_long_length" type="number" name="entry.1551565213" value="" onChange="estStandardSize(trLength.value, trLengthSize, trLengthSS); estTrouserSS();"><br>
+            <input id="tr_long_length" type="number" step=".01" name="entry.1551565213" value="" onChange="estStandardSize(trLength.value, trLengthSize, trLengthSS); estTrouserSS();"><br>
             <span id="tr-lss">&nbsp;</span>
           </div>
 
           <div class="fgi">
             <label for="tr_fullcrotch">FULL CROTCH</label><br>
-            <input id="tr_fullcrotch" type="number" name="entry.1779300864" value=""><br>
+            <input id="tr_fullcrotch" type="number" step=".01" name="entry.1779300864" value=""><br>
             <span>&nbsp;</span>
           </div>
         </div><br>

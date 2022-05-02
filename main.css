@@ -54,6 +54,10 @@ input[type=submit]:hover {
     font-weight: 300;
 }
 
+.h-container {
+    display: none;
+}
+
 .p-container , .tr-container {
     padding: 50px 50px 60px 50px;
     margin-bottom: 20px;

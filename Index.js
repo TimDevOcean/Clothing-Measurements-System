@@ -16,11 +16,6 @@ var trouser = {
     lengthSize: [80,81,81.5,82.5,84,85,85.5,85.8,100]
 };
 
-var skirt = {
-    waistSize: [60,64,73,82,88,97,108,118,151],
-    hipSize: [72,77,89,99,105,114,121,131,151],
-    lengthSize: [80,81,81.5,82.5,84,85,85.5,85.8,100]
-};
 
 // Standard size estimation function parameters declaration
 let trWaistSize = trouser.waistSize;
@@ -55,30 +50,61 @@ function estTrouserSS() {
 } 
 
 
-// Metric convertor
+// Metric convertor for user data input
 var measurement = document.querySelectorAll('input[type=number]');
 var numOfMeasurements = document.querySelectorAll('input[type=number]').length;
-var convertMetricIN = function () {
+var convertMetricToIN = function () {
     for (var i=0; i < numOfMeasurements; i++){
-       var x = measurement[i].value * 0.39;
-       measurement[i].value = x;
+       var x = measurement[i].value / 2.54;
+       measurement[i].value = x.toFixed(2);
         
     }
 }
 
-var convertMetricCM = function () {
+var convertMetricToCM = function () {
     for (var i=0; i < numOfMeasurements; i++){
-       var x = Math.floor(measurement[i].value * 2.54);
-       measurement[i].value = x;
+       var x = measurement[i].value * 2.54;
+       measurement[i].value = x.toFixed(2);
         
     }
 }
 
-let metricToggle = document.querySelector('#metric')
+// Metric convertor for size data array to inches
+var convertSizeDataArrayToIN = function(item) {
+    for (var i=0; i < Object.values(item).length; i++){
+        var itemSizeData = Object.values(item)[i];
+        for (var x=0; x<itemSizeData.length; x++){
+            var itemSizeDataIN = itemSizeData[x] / 2.54
+            itemSizeData[x] = itemSizeDataIN.toFixed(2);
+        }
+    }
+}
+
+// Metric convertor for size data array to centimeters
+var convertSizeDataArrayToCM = function(item) {
+    for (var i=0; i < Object.values(item).length; i++){
+        var itemSizeData = Object.values(item)[i];
+        for (var x=0; x<itemSizeData.length; x++){
+            var itemSizeDataCM = itemSizeData[x] * 2.54
+            itemSizeData[x] = itemSizeDataCM.toFixed(2);
+        }
+    }
+}
+
+
+// Metric toggler
+let metricToggle = document.querySelector('#metric');
+let hMetric = document.querySelector('#h-metric');
 function toggleMetric() {
     if(metricToggle.value === 'IN'){
-        convertMetricIN();
+        hMetric.value = 'INCHES';
+        convertSizeDataArrayToIN(trouser);
+        convertMetricToIN();
+        estTrouserSS();
     } else if (metricToggle.value === 'CM'){
-        convertMetricCM();
+        hMetric.value = 'CENTIMETERS';
+        convertSizeDataArrayToCM(trouser);
+        convertMetricToCM();
+        estTrouserSS();
     }
 }
