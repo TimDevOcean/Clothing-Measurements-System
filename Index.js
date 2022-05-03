@@ -1,4 +1,48 @@
-// TROUSERS / SKIRTS
+// INITIAL FUNCTIONS -----------------------------------------------------------
+
+let measurement = document.querySelectorAll('input[type=number]');
+let numOfMeasurements = document.querySelectorAll('input[type=number]').length;
+let metricToggle = document.querySelector('#metric');
+let hMetric = document.querySelector('#h-metric');
+
+var toggleChecker = function() {
+    if(metricToggle.value === 'CM') {
+        for (var i=0; i < numOfMeasurements; i++){
+            measurement[i].placeholder = 'CM';  
+        }
+        document.querySelector('#h-metric-l').innerHTML = 'Measurements are in Centimeters';    
+    } else if (metricToggle.value === 'IN') {
+        for (var i=0; i < numOfMeasurements; i++){
+            measurement[i].placeholder = 'IN';  
+        }
+        document.querySelector('#h-metric-l').innerHTML = 'Measurements are in Inches'; 
+    }
+}
+toggleChecker();
+
+// LANGUAGE TRANSLATOR ----------------------------------------------------------
+// Translate trouser section
+let enWords = ['WAIST','HIP','THIGH','KNEE','CALF','BAR','SHORT LENGTH','MEDIUM LENGTH','LONG LENGTH','FULL CROTCH'];
+let frWords = ['TAILLE','HANCHES','JAMBE','KNEE','MOLLET','BAR','SHORT LENGTH','MEDIUM LENGTH','LONGEUR','FOURCHE'];
+let enRadio = document.querySelector('#en');
+let frRadio = document.querySelector('#fr');
+let bodyTxt = document.querySelectorAll('.fgrid label');
+
+var translateToFR = function (){
+    for (i=0; i<enWords.length; i++){
+        bodyTxt[i].innerHTML = frWords[i];
+    }
+};
+
+var translateToEN = function (){
+    for (i=0; i<enWords.length; i++){
+        bodyTxt[i].innerHTML = enWords[i];
+    }
+};
+
+enRadio.click();
+
+// TROUSERS / SKIRTS ------------------------------------------------------------
 
 // User input declarations
 let trWaist = document.querySelector('#tr_waist');
@@ -50,22 +94,21 @@ function estTrouserSS() {
 } 
 
 
+// CORE FUNCTIONS -------------------------------------------------------
+
+
 // Metric convertor for user data input
-var measurement = document.querySelectorAll('input[type=number]');
-var numOfMeasurements = document.querySelectorAll('input[type=number]').length;
 var convertMetricToIN = function () {
     for (var i=0; i < numOfMeasurements; i++){
        var x = measurement[i].value / 2.54;
-       measurement[i].value = x.toFixed(2);
-        
+       measurement[i].value = x.toFixed(2);  
     }
 }
 
 var convertMetricToCM = function () {
     for (var i=0; i < numOfMeasurements; i++){
        var x = measurement[i].value * 2.54;
-       measurement[i].value = x.toFixed(2);
-        
+       measurement[i].value = x.toFixed(2); 
     }
 }
 
@@ -91,10 +134,7 @@ var convertSizeDataArrayToCM = function(item) {
     }
 }
 
-
 // Metric toggler
-let metricToggle = document.querySelector('#metric');
-let hMetric = document.querySelector('#h-metric');
 function toggleMetric() {
     if(metricToggle.value === 'IN'){
         hMetric.value = 'INCHES';

@@ -16,7 +16,7 @@
         <div class="sgrid">
           <div class="sgi" align="left";>
             <label for="metric">Metric</label>
-            <select name="" id="metric" onchange="toggleMetric();">
+            <select name="" id="metric" onchange="toggleChecker(); toggleMetric();">
               <option value="CM">Centimeters</option>
               <option value="IN">Inches</option>
             </select>
@@ -28,10 +28,10 @@
 
           <div class="sgi" align="right";>
             <label for="lang">Language</label>
-            <select name="" id="lang">
-              <option value="EN">English</option>
-              <option value="FR">French</option>
-            </select>
+            <input type="radio" name="lang" id="en" value="EN" onclick="translateToEN();">
+            <label for="en">EN</label>
+            <input type="radio" name="lang" id="fr" value="FR" onclick="translateToFR();">
+            <label for="fr">FR</label>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
         <div class="h-container">
           <div class="hgrid">
             <div class="hgi" align="center";>
-              <label for="metric">Metric</label>
+              <span id="h-metric-l">Metric</span>
               <select hidden name="entry.619577762" id="h-metric">
                 <option value="CENTIMETERS">Centimeters</option>
                 <option value="INCHES">Inches</option>
@@ -89,7 +89,7 @@
         <div class="fgrid">
           <div class="fgi">
             <label for="tr_waist">WAIST</label><br>
-            <input id="tr_waist" class="num" type="number" step=".01" name="entry.48874829" value="" onChange="estStandardSize(trWaist.value, trWaistSize, trWaistSS); estTrouserSS();"><br>
+            <input id="tr_waist" placeholder="CM" class="num" type="number" step=".01" name="entry.48874829" value="" onChange="estStandardSize(trWaist.value, trWaistSize, trWaistSS); estTrouserSS();"><br>
             <span id="tr-wss">&nbsp;</span>
           </div>
 

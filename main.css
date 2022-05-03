@@ -18,6 +18,12 @@ button , input[type=submit] , .ss a {
     cursor: pointer;
 }
 
+::placeholder {
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0.5;
+}
+
 .fheading {
     text-align: center;
     padding-bottom: 20px;
@@ -25,6 +31,10 @@ button , input[type=submit] , .ss a {
     letter-spacing: 2px;
 }
 
+span#h-metric-l {
+    font-size: 15px;
+    font-weight: 300;
+}
 
 .ss a {
     width: 200px;
@@ -55,12 +65,12 @@ input[type=submit]:hover {
 }
 
 .h-container {
-    display: none;
+    display: block;
 }
 
 .p-container , .tr-container {
     padding: 50px 50px 60px 50px;
-    margin-bottom: 20px;
+    margin: 10px 0;
     border-radius: 15px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
