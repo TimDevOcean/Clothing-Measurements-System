@@ -2,6 +2,15 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+* :focus {
+    outline-color: #d3a757;
+
+}
+
+hr {
+    border-top: 1px solid #d3a757;
+}
+
 button , input[type=submit] , .ss a {
     text-transform: uppercase;
     display: block;
@@ -16,6 +25,15 @@ button , input[type=submit] , .ss a {
     color: #fff;
     letter-spacing: 1px;
     cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color:#d3a757;
+    transition: 0.3s;
+}
+
+input[type='radio'] , input[type='select'] {
+    accent-color: #d3a757;
 }
 
 ::placeholder {
@@ -41,11 +59,6 @@ span#h-metric-l {
 }
 
 .ss a:hover {
-    background-color:#d3a757;
-    transition: 0.3s;
-}
-
-input[type=submit]:hover {
     background-color:#d3a757;
     transition: 0.3s;
 }
@@ -131,7 +144,7 @@ input[type=submit]:hover {
 }
 
 .fgi span {
-    color: green;
+    color: #d3a757;
 }
 
 .ss select {
@@ -145,5 +158,30 @@ input[type=submit]:hover {
     border: none;
     border-bottom: solid 1px gray;
     background-color: none;
-    color: rgb(0, 85, 0);
+    color: #d3a757;
 }
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    .fgrid {
+        display: grid;
+        grid-template-columns: auto auto;
+        row-gap: 10px;
+        column-gap: 20px;
+        column-width: 25%;
+    }
+
+    .fgrid input {
+        width: 80px;
+        height: 30px;
+        margin-top: 5px;
+        border-radius: 25px;
+        border: solid 1px #505050;
+        padding: 2px 20px;
+        font-size: 18px;
+    }
+
+    body {
+        background-color: red;
+    }
+ }
